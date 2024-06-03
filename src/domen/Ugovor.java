@@ -14,10 +14,10 @@ public class Ugovor {
     
     private int ugovorID;
     private Student student;
-     private Kompanija kompanija;
-     private LocalDate datumOd;
-     private LocalDate datumDo;
-     private SkolskaGodina skolskaGodina;
+    private Kompanija kompanija;
+    private LocalDate datumOd;
+    private LocalDate datumDo;
+    private SkolskaGodina skolskaGodina;
     private Mesto mesto;
     
 }

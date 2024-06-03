@@ -14,13 +14,15 @@ public class Administrator {
     private String prezime;
     private String username;
     private String lozinka;
+    private String email;
 
-    public Administrator(int admID, String ime, String prezime, String username, String lozinka) {
+    public Administrator(int admID, String ime, String prezime, String username, String lozinka,String email) {
         this.admID = admID;
         this.ime = ime;
         this.prezime = prezime;
         this.username = username;
         this.lozinka = lozinka;
+        this.email=email;
     }
 
     public int getAdmID() {
@@ -64,6 +66,14 @@ public class Administrator {
     }
     
     
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
     
     
 }
