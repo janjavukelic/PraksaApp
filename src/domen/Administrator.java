@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package domen;
-
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 /**
  *
  * @author janja
@@ -76,4 +77,38 @@ public class Administrator {
     }
     
     
+    
+
+
+
+    public static String hashPassword(String lozinka) {
+        try {
+            // Create MessageDigest instance for SHA-256
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            
+            // Add password bytes to digest
+            md.update(lozinka.getBytes());
+            
+            // Get the hashed bytes
+            byte[] hashedBytes = md.digest();
+            
+            // Convert hashed bytes to hexadecimal format
+            StringBuilder stringBuilder = new StringBuilder();
+            for (byte b : hashedBytes) {
+                stringBuilder.append(String.format("%02x", b));
+            }
+            return stringBuilder.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    
+    
+    
+    
 }
+
+    
+
